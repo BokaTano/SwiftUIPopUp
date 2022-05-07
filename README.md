@@ -16,11 +16,9 @@ Credits go to [PartialSheet](https://github.com/AndreaMiotto/PartialSheet) for g
 ```swift
 @main
 struct YourApp: App {
-    @StateObject var popupManager = PopUpManager()
-
     var body: some Scene {
         MainView()
-            .attachPopupToRoot(popupManager)
+            .attachPopupToRoot()
     }
 }
 ```

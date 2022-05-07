@@ -7,8 +7,10 @@ public extension View {
         Popup(isPresented: isPresented, content: content, offset: offset, parent: self)
     }
     
-    internal func attachPopupToRoot(_ manager: PopUpManager) -> some View {
-        modifier(PopUpModifier())
+    func attachPopupToRoot() -> some View {
+        let manager: PopUpManager = PopUpManager()
+
+        return modifier(PopUpModifier())
             .environmentObject(manager)
     }
 }
