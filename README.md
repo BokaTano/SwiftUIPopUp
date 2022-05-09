@@ -13,12 +13,27 @@ Credits go to [PartialSheet](https://github.com/AndreaMiotto/PartialSheet) for g
 
 1. Step: Register the PopUpManager on your root view
 
+1a. Standard way
+
 ```swift
 @main
 struct YourApp: App {
     var body: some Scene {
         MainView()
             .attachPopupToRoot()
+    }
+}
+```
+
+2b. If you you want real time updates in the background of the popup, made through your popup content UI, for examble by using a @Binding in your popup content.
+```swift
+@main
+struct YourApp: App {
+    @StateObject var popupManager = PopUpManager()
+
+    var body: some Scene {
+        MainView()
+            .attachPopupToRoot(popupManager)
     }
 }
 ```
