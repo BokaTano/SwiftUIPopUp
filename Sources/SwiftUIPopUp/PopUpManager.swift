@@ -1,6 +1,6 @@
 import SwiftUI
 
-class PopUpManager: ObservableObject {
+public class PopUpManager: ObservableObject {
     @Published var isPresented: Bool = false {
         didSet {
             if !isPresented {
@@ -17,7 +17,7 @@ class PopUpManager: ObservableObject {
     
     private(set) var onDismiss: (() -> Void)?
     
-    init() {
+    public init() {
         content = EmptyView().eraseToAnyView()
         offset = (x: CGFloat(0), CGFloat(0))
     }
